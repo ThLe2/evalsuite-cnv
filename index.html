@@ -3,136 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Évaluation - Suite Gestion des Émotions | TMK Performances</title>
+    <title>Évaluation - Gestion des Émotions | TMK Performances</title>
     <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #f5f7fa;
-            --text-color: #333;
-            --light-gray: #f8f9fa;
-            --border-color: #ddd;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--secondary-color);
+        .tmk-header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .tmk-header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .tmk-footer {
+            text-align: center;
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 20px;
+            padding: 10px 0;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .evaluation-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #f3e8ff, #e0f2fe);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .evaluation-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .evaluation-header {
+            background: linear-gradient(90deg, #7e22ce, #4f46e5);
+            color: white;
+            padding: 24px 32px;
+            text-align: center;
+        }
+
+        .evaluation-header h1 {
+            font-size: 28px;
+            font-weight: bold;
             margin: 0;
+        }
+
+        .evaluation-content {
+            padding: 32px;
+            color: #374151;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .question-box {
+            background: #f3e8ff;
+            border-left: 4px solid #7c3aed;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 20px;
+        }
+
+        .question-title {
+            font-weight: 600;
+            color: #7c3aed;
+            font-size: 18px;
+            margin: 0 0 12px 0;
+        }
+
+        .question-list {
+            list-style-type: none;
             padding: 0;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: white;
-            min-height: 100vh;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header img {
-            max-width: 150px;
-            height: auto;
+        .question-list li {
+            background-color: #f8f9fa;
             margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #4f46e5;
         }
 
-        h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--light-gray);
-            padding-bottom: 5px;
-        }
-
-        .evaluation-section {
-            margin-bottom: 25px;
-        }
-
-        .question {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .question h3 {
+        .question-list li h3 {
             margin-top: 0;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            color: #4f46e5;
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        footer {
+        .evaluation-footer {
+            background: #f9fafb;
+            padding: 20px 32px;
             text-align: center;
-            font-size: 10px;
-            color: #555;
-            margin-top: 18px;
-            padding: 10px 0;
-            border-top: 1px solid var(--border-color);
+            color: #6b7280;
+            font-size: 14px;
+            border-radius: 0 0 20px 20px;
         }
 
         @media (max-width: 768px) {
-            .container {
+            .evaluation-container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .evaluation-header {
+                padding: 16px 20px;
+            }
+
+            .evaluation-header h1 {
+                font-size: 22px;
+            }
+
+            .evaluation-content {
                 padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://www.tmk-performances.com/public/assets/gifs/logo.png" alt="TMK Performances">
-            <h1>Évaluation - Suite Gestion des Émotions</h1>
-        </header>
+    <!-- Header TMK Performances -->
+    <div class="tmk-header">
+        <img src="https://www.tmk-performances.com/public/assets/gifs/logo.png" alt="TMK Performances">
+    </div>
 
-        <div class="evaluation-section">
-            <h2>Questions d'évaluation</h2>
-
-            <div class="question">
-                <h3>1. Qu’avez-vous compris et retenu du module ?</h3>
+    <!-- Contenu principal -->
+    <div class="evaluation-container">
+        <div class="evaluation-card">
+            <!-- En-tête -->
+            <div class="evaluation-header">
+                <h1>Évaluation - Gestion des Émotions</h1>
             </div>
 
-            <div class="question">
-                <h3>2. Quels sont les liens que vous pouvez faire avec la relation client ?</h3>
+            <!-- Contenu -->
+            <div class="evaluation-content">
+                <div class="question-box">
+                    <p class="question-title">Questions d'évaluation :</p>
+                    <p style="margin-bottom: 20px; color: #4b5563;">
+                        Réfléchissez à ces questions pour évaluer votre compréhension et votre progression.
+                    </p>
+
+                    <ul class="question-list">
+                        <li>
+                            <h3>1. Qu’avez-vous compris et retenu du module ?</h3>
+                        </li>
+                        <li>
+                            <h3>2. Quels sont les liens que vous pouvez faire avec la relation client ?</h3>
+                        </li>
+                        <li>
+                            <h3>3. Quels sont les axes d’amélioration que vous avez identifié pour vous-même ?</h3>
+                        </li>
+                        <li>
+                            <h3>4. Parmi ces axes d’amélioration, choisissez-en un et identifiez un plan d’action pour les jours à venir.</h3>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="question">
-                <h3>3. Quels sont les axes d’amélioration que vous avez identifié pour vous-même ?</h3>
-            </div>
-
-            <div class="question">
-                <h3>4. Parmi ces axes d’amélioration, choisissez-en un et identifiez un plan d’action pour les jours à venir.</h3>
+            <!-- Pied de page -->
+            <div class="evaluation-footer">
+                TMK Performances • Réfléchissez à vos réponses pour une meilleure gestion de vos émotions en situation professionnelle
             </div>
         </div>
     </div>
 
-    <footer>
+    <!-- Footer TMK Performances -->
+    <div class="tmk-footer">
         © <script>document.write(new Date().getFullYear());</script> TMK Performances
-    </footer>
+    </div>
 </body>
 </html>
